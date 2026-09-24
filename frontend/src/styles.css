@@ -1,0 +1,1350 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+:root {
+    font-family: 'Playfair Display', serif;
+    color: #536238;
+    background: #F4F6E8;
+    line-height: 1.4;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #F4F6E8;
+    color: #536238;
+}
+
+
+/* =========================================================
+   APP SHELL
+   ========================================================= */
+
+.app-shell {
+    min-height: 100vh;
+    background: #F4F6E8;
+}
+
+
+/* =========================================================
+   TOP BAR
+   ========================================================= */
+
+.topbar {
+    height: 72px;
+    border-bottom: 1px solid #DCE4C8;
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    gap: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    box-shadow: 0 2px 10px rgba(100, 120, 60, 0.06);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 250px;
+}
+
+.brand-mark {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.brand b {
+    display: block;
+    letter-spacing: 1.5px;
+    color: #536238;
+}
+
+.brand span {
+    display: block;
+    color: #899375;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.node-select {
+    margin-left: auto;
+    background: #F8FAF3;
+    color: #59683B;
+    border: 1px solid #D6E0BE;
+    border-radius: 9px;
+    padding: 10px 14px;
+    min-width: 170px;
+}
+
+.nav-tabs {
+    display: flex;
+    gap: 4px;
+}
+
+.nav-tabs button {
+    background: transparent;
+    border: 0;
+    color: #7C876B;
+    padding: 10px 11px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .7px;
+    cursor: pointer;
+}
+
+.nav-tabs button.active {
+    color: #71883F;
+    border-bottom: 2px solid #A4B96B;
+}
+
+.status {
+    font-size: 10px;
+    color: #7C876B;
+    white-space: nowrap;
+}
+
+.status i {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #8BCB82;
+    margin-right: 5px;
+}
+
+
+/* =========================================================
+   DASHBOARD
+   ========================================================= */
+
+.dashboard {
+    height: calc(100vh - 72px);
+    display: grid;
+    grid-template-columns: 1fr;
+    background: #F4F6E8;
+    color: #536238;
+}
+
+
+/* =========================================================
+   ANALYSIS MENU
+   ========================================================= */
+
+.analysis-menu {
+    padding: 25px 14px;
+    border-right: 1px solid #DCE4C8;
+    background: #F9FAF4;
+    z-index: 3;
+}
+
+.menu-title,
+.eyebrow {
+    font-size: 10px;
+    letter-spacing: 1.8px;
+    color: #899472;
+    font-weight: 800;
+}
+
+.analysis-menu button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: left;
+    border: 1px solid transparent;
+    background: transparent;
+    color: #59683B;
+    padding: 17px 10px;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 7px;
+}
+
+.analysis-menu button:hover {
+    background: #EDF2DD;
+    border-color: #D5E0B9;
+}
+
+.analysis-menu strong {
+    color: #7B8868;
+    font-size: 11px;
+}
+
+.analysis-menu span {
+    flex: 1;
+    font-weight: 700;
+    font-size: 13px;
+    color: #59683B;
+}
+
+.analysis-menu small {
+    display: block;
+    color: #8A9577;
+    font-weight: 400;
+    margin-top: 4px;
+}
+
+
+/* =========================================================
+   MAP
+   IMPORTANT:
+   Google Maps itself is NOT modified.
+   ========================================================= */
+
+.map-stage {
+    position: relative;
+    overflow: hidden;
+}
+
+.map {
+    width: 100%;
+    height: 100%;
+}
+
+.map-loading,
+.map-error {
+    height: 100%;
+    display: grid;
+    place-items: center;
+    color: #718052;
+    background: #F4F6E8;
+}
+
+
+/* =========================================================
+   LOCATION CARD
+   ========================================================= */
+
+.location-card {
+    position: absolute;
+    left: 28px;
+    bottom: 30px;
+    max-width: 530px;
+    background: rgba(255, 255, 255, .94);
+    border: 1px solid #D7E1BE;
+    border-radius: 14px;
+    padding: 16px 18px;
+    display: flex;
+    gap: 12px;
+    box-shadow: 0 15px 45px rgba(80, 100, 40, .15);
+    backdrop-filter: blur(12px);
+}
+
+.pin-dot {
+    color: #E85E5E;
+    font-size: 25px;
+    line-height: 1;
+}
+
+.location-card h2 {
+    margin: 2px 0 4px;
+    font-size: 20px;
+    color: #59683B;
+}
+
+.meta,
+.cities,
+.state {
+    color: #899375;
+    font-size: 11px;
+}
+
+.cities {
+    margin-top: 8px;
+    line-height: 1.6;
+    max-height: 42px;
+    overflow: hidden;
+}
+
+.state {
+    margin-top: 6px;
+    color: #7A9145;
+}
+
+
+/* =========================================================
+   LEGEND
+   ========================================================= */
+
+.legend {
+    position: absolute;
+    right: 22px;
+    bottom: 22px;
+    background: rgba(255, 255, 255, .96);
+    border: 1px solid #D7E1BE;
+    border-radius: 12px;
+    padding: 13px 15px;
+    font-size: 11px;
+    line-height: 1.8;
+    color: #65734A;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 25px rgba(80, 100, 40, .13);
+}
+
+.legend b {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: #78865D;
+}
+
+.legend span {
+    display: inline-block;
+    width: 22px;
+}
+
+.legend hr {
+    border: 0;
+    border-top: 1px solid #E0E6D1;
+    margin: 7px 0;
+}
+
+.sev {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 7px;
+}
+
+.sev.low {
+    background: #D9C84A;
+}
+
+.sev.med {
+    background: #E29A45;
+}
+
+.sev.high {
+    background: #E45A5A;
+}
+
+
+/* =========================================================
+   MAP CAPTION
+   ========================================================= */
+
+.map-caption {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    color: #647440;
+    font-size: 10px;
+    letter-spacing: 1.2px;
+    background: rgba(255, 255, 255, .90);
+    border: 1px solid #D8E2C1;
+    padding: 8px 10px;
+    border-radius: 7px;
+    box-shadow: 0 4px 14px rgba(80, 100, 40, .10);
+}
+
+
+/* =========================================================
+   GENERAL PAGES
+   Forecast / Nowcast / Historical
+   ========================================================= */
+
+.page {
+    padding: 30px;
+    max-width: 1600px;
+    margin: auto;
+    background: #F4F6E8;
+    color: #59683B;
+    min-height: 100%;
+}
+
+.page-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 22px;
+}
+
+.page h1 {
+    font-size: 28px;
+    margin: 5px 0;
+    color: #59683B;
+}
+
+.page h2,
+.page h3 {
+    color: #59683B;
+}
+
+.page p {
+    color: #7C876B;
+    margin: 0;
+}
+
+.chip {
+    border: 1px solid #D2DDB7;
+    border-radius: 999px;
+    padding: 8px 12px;
+    color: #718052;
+    font-size: 10px;
+    letter-spacing: 1px;
+    background: #FFFFFF;
+}
+
+.chip.live {
+    color: #668548;
+    border-color: #C7D9A7;
+    background: #F2F7E7;
+}
+
+
+/* =========================================================
+   GRAPH GRID
+   ========================================================= */
+
+.graph-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.graph-card,
+.live-card {
+    background: #FFFFFF;
+    border: 1px solid #D8E2C2;
+    border-radius: 14px;
+    overflow: hidden;
+    color: #59683B;
+    box-shadow: 0 6px 20px rgba(90, 110, 50, .08);
+}
+
+.graph-title {
+    padding: 11px 14px;
+    border-bottom: 1px solid #E0E6D1;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .8px;
+    color: #657346;
+    background: #F7F9F1;
+}
+
+.graph-card iframe {
+    width: 100%;
+    height: 520px;
+    border: 0;
+    background: white;
+}
+
+.graph-card.wide iframe {
+    height: 720px;
+}
+
+.live-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.live-card {
+    padding-bottom: 5px;
+}
+
+
+/* =========================================================
+   ANALYSIS POPUP
+   ========================================================= */
+
+.analysis-popup {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 390px;
+    background: #FFFFFF;
+    border: 1px solid #D5E0BA;
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow: 0 25px 70px rgba(80, 100, 40, .18);
+    backdrop-filter: none;
+    color: #59683B;
+    z-index: 50;
+    animation: popupAppear 0.22s ease-out;
+}
+
+@keyframes popupAppear {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -47%) scale(.96);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+
+/* =========================================================
+   POPUP CLOSE
+   ========================================================= */
+
+.popup-close {
+    position: absolute;
+    right: 13px;
+    top: 11px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #D8E2C1;
+    background: #F1F5E6;
+    color: #7B8766;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.popup-close:hover {
+    color: #59683B;
+    background: #E5EDD0;
+}
+
+
+/* =========================================================
+   POPUP LOCATION
+   ========================================================= */
+
+.popup-location {
+    display: flex;
+    gap: 13px;
+    align-items: flex-start;
+    padding-right: 25px;
+}
+
+.popup-pin {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: #FBECEC;
+    color: #E45A5A;
+    font-size: 17px;
+    border: 1px solid #F0CACA;
+}
+
+.popup-eyebrow {
+    color: #899472;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.popup-location h2 {
+    margin: 3px 0 4px;
+    font-size: 22px;
+    letter-spacing: .4px;
+    color: #59683B;
+}
+
+.popup-coordinates {
+    color: #899375;
+    font-size: 11px;
+}
+
+.popup-radius {
+    color: #7D896A;
+    font-size: 10px;
+    margin-top: 4px;
+}
+
+.popup-radius b {
+    color: #7D9145;
+}
+
+
+/* =========================================================
+   POPUP DIVIDER
+   ========================================================= */
+
+.popup-divider {
+    height: 1px;
+    background: #E1E7D3;
+    margin: 18px 0;
+}
+
+
+/* =========================================================
+   POPUP TITLE
+   ========================================================= */
+
+.popup-title {
+    color: #899472;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+    margin-bottom: 9px;
+}
+
+
+/* =========================================================
+   ANALYSIS BUTTONS
+   ========================================================= */
+
+.analysis-option {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    text-align: left;
+    padding: 13px 12px;
+    margin-top: 7px;
+    border-radius: 11px;
+    border: 1px solid #DCE5C9;
+    background: #F8FAF3;
+    color: #59683B;
+    cursor: pointer;
+    transition: background .18s ease, border-color .18s ease, transform .18s ease;
+}
+
+.analysis-option:hover {
+    background: #EDF3DD;
+    border-color: #C8D6A4;
+    transform: translateX(3px);
+}
+
+.analysis-option strong {
+    display: block;
+    font-size: 13px;
+    font-weight: 750;
+    color: #59683B;
+}
+
+.analysis-option span {
+    display: block;
+    color: #899375;
+    font-size: 10px;
+    margin-top: 3px;
+}
+
+
+/* =========================================================
+   ANALYSIS ICONS
+   ========================================================= */
+
+.analysis-icon {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    border-radius: 9px;
+    display: grid;
+    place-items: center;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.forecast-icon {
+    background: #EDF3D8;
+    color: #789044;
+}
+
+.nowcast-icon {
+    background: #E5F1F5;
+    color: #5890A0;
+}
+
+.historical-icon {
+    background: #EEE8F6;
+    color: #806A9F;
+}
+
+.analysis-arrow {
+    margin-left: auto;
+    color: #8A9673;
+    font-size: 15px;
+}
+
+.analysis-option:hover .analysis-arrow {
+    color: #789044;
+}
+
+
+/* =========================================================
+   MAP FULLSCREEN
+   ========================================================= */
+
+.map-fullscreen-container {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    /*
+     * This background is only visible behind the map.
+     * Google satellite imagery remains unchanged.
+     */
+    background: #F4F6E8;
+}
+
+
+/* Google Map */
+
+.map-fullscreen-container .map {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* =========================================================
+   FULLSCREEN BUTTON
+   ========================================================= */
+
+.earthwatch-fullscreen-button {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #D5E0BA;
+    border-radius: 6px;
+    background: #FFFFFF;
+    color: #657541;
+    font-size: 23px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(70, 90, 40, .15);
+    z-index: 110;
+}
+
+.earthwatch-fullscreen-button:hover {
+    background: #EEF3DF;
+    color: #59683B;
+}
+
+
+/* =========================================================
+   FULLSCREEN STAGE
+   ========================================================= */
+
+.map-fullscreen-container:fullscreen {
+    width: 100vw;
+    height: 100vh;
+    background: #F4F6E8;
+}
+
+.map-fullscreen-container:-webkit-full-screen {
+    width: 100vw;
+    height: 100vh;
+    background: #F4F6E8;
+}
+
+.map-fullscreen-container:fullscreen .map,
+.map-fullscreen-container:-webkit-full-screen .map {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+
+/* =========================================================
+   DASHBOARD OVERLAY Z-INDEX
+   ========================================================= */
+
+.map-stage .analysis-popup {
+    z-index: 50;
+}
+
+.map-stage .legend {
+    z-index: 40;
+}
+
+.map-stage .map-caption {
+    z-index: 40;
+}
+
+
+/* =========================================================
+   FULLSCREEN DASHBOARD
+   ========================================================= */
+
+.map-stage:fullscreen {
+    width: 100vw;
+    height: 100vh;
+    background: #F4F6E8;
+    overflow: hidden;
+}
+
+.map-stage:-webkit-full-screen {
+    width: 100vw;
+    height: 100vh;
+    background: #F4F6E8;
+    overflow: hidden;
+}
+
+.map-stage:fullscreen .map-fullscreen-container,
+.map-stage:-webkit-full-screen .map-fullscreen-container {
+    width: 100%;
+    height: 100%;
+}
+
+.map-stage:fullscreen .analysis-popup {
+    z-index: 100;
+}
+
+.map-stage:fullscreen .legend {
+    z-index: 90;
+}
+
+.map-stage:fullscreen .map-caption {
+    z-index: 90;
+}
+
+.map-stage:fullscreen .earthwatch-fullscreen-button {
+    z-index: 110;
+}
+
+
+/* =========================================================
+   FORECAST / NOWCAST / HISTORICAL
+   ========================================================= */
+
+.forecast-page,
+.nowcast-page,
+.historical-page,
+.analysis-page {
+    background: #F4F6E8 !important;
+    color: #59683B !important;
+    min-height: 100vh;
+}
+
+main {
+    color: #59683B;
+}
+
+.forecast-page h1,
+.forecast-page h2,
+.forecast-page h3,
+.nowcast-page h1,
+.nowcast-page h2,
+.nowcast-page h3,
+.historical-page h1,
+.historical-page h2,
+.historical-page h3,
+.analysis-page h1,
+.analysis-page h2,
+.analysis-page h3 {
+    color: #59683B !important;
+}
+
+
+/* =========================================================
+   ANALYSIS CARDS
+   ========================================================= */
+
+.forecast-page .card,
+.nowcast-page .card,
+.historical-page .card,
+.analysis-page .card,
+.forecast-card,
+.nowcast-card,
+.historical-card {
+    background: #FFFFFF !important;
+    color: #59683B !important;
+    border: 1px solid #D8E2C2 !important;
+    box-shadow: 0 6px 20px rgba(90, 110, 50, .08) !important;
+}
+
+
+/* Text */
+
+.forecast-page p,
+.forecast-page span,
+.nowcast-page p,
+.nowcast-page span,
+.historical-page p,
+.historical-page span,
+.analysis-page p,
+.analysis-page span {
+    color: #7C876B;
+}
+
+
+/* Labels */
+
+.forecast-page label,
+.nowcast-page label,
+.historical-page label,
+.analysis-page label {
+    color: #69764E !important;
+}
+
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+.forecast-page input,
+.forecast-page select,
+.forecast-page textarea,
+.nowcast-page input,
+.nowcast-page select,
+.nowcast-page textarea,
+.historical-page input,
+.historical-page select,
+.historical-page textarea {
+    background: #FFFFFF !important;
+    color: #59683B !important;
+    border: 1px solid #D5DEBE !important;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.forecast-page button,
+.nowcast-page button,
+.historical-page button,
+.analysis-page button {
+    background: #E8EED4 !important;
+    color: #59683B !important;
+    border: 1px solid #CBD8A8 !important;
+}
+
+.forecast-page button:hover,
+.nowcast-page button:hover,
+.historical-page button:hover,
+.analysis-page button:hover {
+    background: #DDE7BE !important;
+}
+
+
+/* =========================================================
+   TABLES
+   ========================================================= */
+
+.forecast-page table,
+.nowcast-page table,
+.historical-page table {
+    background: #FFFFFF !important;
+    color: #59683B !important;
+    border-color: #DCE4C7 !important;
+}
+
+.forecast-page th,
+.nowcast-page th,
+.historical-page th {
+    background: #EEF3DF !important;
+    color: #59683B !important;
+}
+
+.forecast-page td,
+.nowcast-page td,
+.historical-page td {
+    background: #FFFFFF !important;
+    color: #707A5B !important;
+    border-color: #E1E6D4 !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+    .topbar {
+        gap: 8px;
+    }
+    .brand {
+        min-width: auto;
+    }
+    .brand span,
+    .status {
+        display: none;
+    }
+    .nav-tabs button {
+        padding: 8px 5px;
+        font-size: 9px;
+    }
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+    .analysis-menu {
+        display: none;
+    }
+    .graph-grid,
+    .live-grid {
+        grid-template-columns: 1fr;
+    }
+    .location-card {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+    }
+    .legend {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   POPUP MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+    .analysis-popup {
+        width: calc(100% - 28px);
+        padding: 18px;
+        top: auto;
+        bottom: 20px;
+        transform: translateX(-50%);
+        animation: popupMobileAppear .22s ease-out;
+    }
+    @keyframes popupMobileAppear {
+        from {
+            opacity: 0;
+            transform: translate(-50%, 15px);
+        }
+        to {
+            opacity: 1;
+            transform: translate(-50%, 0);
+        }
+    }
+}
+
+
+/* =========================================================
+   HISTORICAL TREND ANALYSIS
+   ========================================================= */
+
+.trend-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 24px;
+}
+
+.trend-card {
+    background: #FFFFFF;
+    border: 1px solid #D8E2C2;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(90, 110, 50, .08);
+    min-width: 0;
+}
+
+.trend-card-header {
+    padding: 16px 18px;
+    background: #F7F9F1;
+    border-bottom: 1px solid #E0E6D1;
+}
+
+.trend-card-header h2 {
+    margin: 0;
+    color: #59683B;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.trend-card-header p {
+    margin: 4px 0 0;
+    color: #899375;
+    font-size: 11px;
+}
+
+.trend-iframe {
+    display: block;
+    width: 100%;
+    height: 480px;
+    border: 0;
+    background: #FFFFFF;
+}
+
+.trend-image {
+    display: block;
+    width: 100%;
+    height: 480px;
+    object-fit: contain;
+    background: #FFFFFF;
+}
+
+
+/* =========================================================
+   WIDE TREND CARD
+   ========================================================= */
+
+.trend-card.wide {
+    grid-column: 1 / -1;
+}
+
+
+/* =========================================================
+   HISTORICAL PAGE
+   ========================================================= */
+
+.historical-page {
+    overflow-y: auto;
+}
+
+.historical-page .page-head {
+    align-items: center;
+}
+
+
+/* =========================================================
+   HISTORICAL MOBILE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+    .trend-grid {
+        grid-template-columns: 1fr;
+    }
+    .trend-card.wide {
+        grid-column: auto;
+    }
+    .trend-iframe {
+        height: 450px;
+    }
+}
+
+@media (max-width: 600px) {
+    .page {
+        padding: 20px 14px;
+    }
+    .trend-grid {
+        gap: 14px;
+    }
+    .trend-card-header {
+        padding: 13px 14px;
+    }
+    .trend-card-header h2 {
+        font-size: 15px;
+    }
+    .trend-iframe {
+        height: 400px;
+    }
+}
+
+.trend-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 24px;
+}
+
+.trend-card {
+    background: #FFFFFF;
+    border: 1px solid #D8E2C2;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(90, 110, 50, .08);
+    min-width: 0;
+}
+
+.trend-card-header {
+    padding: 16px 18px;
+    background: #F7F9F1;
+    border-bottom: 1px solid #E0E6D1;
+}
+
+.trend-card-header h2 {
+    margin: 0;
+    color: #59683B;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.trend-card-header p {
+    margin: 4px 0 0;
+    color: #899375;
+    font-size: 11px;
+}
+
+.trend-iframe {
+    display: block;
+    width: 100%;
+    height: 480px;
+    border: 0;
+    background: #FFFFFF;
+}
+
+.historical-page {
+    overflow-y: auto;
+}
+
+@media (max-width: 1000px) {
+    .trend-grid {
+        grid-template-columns: 1fr;
+    }
+    .trend-iframe {
+        height: 450px;
+    }
+}
+
+@media (max-width: 600px) {
+    .trend-grid {
+        gap: 14px;
+    }
+    .trend-card-header {
+        padding: 13px 14px;
+    }
+    .trend-card-header h2 {
+        font-size: 15px;
+    }
+    .trend-iframe {
+        height: 400px;
+    }
+}
+
+/* =========================================================
+   HAZARD ALERTS
+   ========================================================= */
+
+.haz-panel {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 300px;
+    max-height: calc(100% - 40px);
+    background: #FFFFFF;
+    border: 1px solid #D7E1BE;
+    border-radius: 12px;
+    box-shadow: 0 15px 45px rgba(80, 100, 40, .18);
+    z-index: 45;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: 'Playfair Display', serif;
+}
+
+.haz-panel-head {
+    background: #59683B;
+    color: #fff;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 11px;
+    font-size: 14px;
+    position: relative;
+}
+
+.haz-panel-close {
+    position: absolute;
+    right: 12px;
+    top: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.haz-filters {
+    display: flex;
+    gap: 4px;
+    padding: 8px;
+    background: #F7F9F1;
+    border-bottom: 1px solid #E0E6D1;
+}
+
+.haz-filters button {
+    flex: 1;
+    font-size: 10.5px;
+    padding: 6px 0;
+    border: 1px solid #D2DDB7;
+    background: #fff;
+    color: #59683B;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.haz-filters button.active {
+    background: #59683B;
+    color: #fff;
+    border-color: #59683B;
+}
+
+.haz-list {
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.haz-empty {
+    color: #899375;
+    font-size: 12px;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.haz-card {
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    font-size: 12.5px;
+    line-height: 1.4;
+    transition: transform .12s;
+}
+
+.haz-card:hover {
+    transform: translateX(-3px);
+}
+
+.haz-card b {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 2px;
+}
+
+.haz-card small {
+    display: block;
+    opacity: .85;
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+.haz-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 45;
+    background: #59683B;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 14px;
+    cursor: pointer;
+    font-size: 13px;
+    box-shadow: 0 6px 20px rgba(90, 110, 50, .2);
+    font-family: 'Playfair Display', serif;
+}
+
+.haz-pin {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    line-height: 1;
+    border: 2px solid rgba(0, 0, 0, .35);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .4);
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+}
+
+.haz-pulse {
+    animation: hazpulse 1.4s infinite;
+}
+
+@keyframes hazpulse {
+    0%   { box-shadow: 0 0 0 0 rgba(224, 32, 32, .75); }
+    70%  { box-shadow: 0 0 0 14px rgba(224, 32, 32, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(224, 32, 32, 0); }
+}
+
+@media (max-width: 1000px) {
+    .haz-panel {
+        width: calc(100% - 40px);
+        max-height: 50%;
+    }
+}

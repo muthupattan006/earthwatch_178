@@ -1,0 +1,2 @@
+import React from 'react';
+export default function Legend(){return <div className="legend"><b>Disasters</b><div><span>🪨</span> Landslide</div><div><span>🌊</span> Flood</div><div><span>🔥</span> Forest fire</div><div><span>🏭</span> Industrial emission</div><div><span>🌡</span> Heat wave</div><div><span>💧</span> Water level</div><hr/><div><em className="sev low"/> Low / Watch</div><div><em className="sev med"/> Medium / Alert</div><div><em className="sev high"/> High / Warning</div></div>}

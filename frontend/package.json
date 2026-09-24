@@ -1,0 +1,19 @@
+{
+  "name": "earthwatch-frontend",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": { "dev": "vite", "build": "vite build", "preview": "vite preview" },
+  "dependencies": {
+    "@vitejs/plugin-react": "^5.0.2",
+    "axios": "^1.12.2",
+    "plotly.js-dist-min": "^3.1.1",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-plotly.js": "^2.6.0",
+    "react-router-dom": "^7.9.1",
+    "@react-google-maps/api": "^2.20.7",
+    "vite": "^7.1.7"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,3 @@
+import React from 'react';
+import {FORECAST_GRAPHS} from '../data';
+export default function Forecast({node}){return <main className="page"><div className="page-head"><div><div className="eyebrow">FORECASTING</div><h1>{node.name} · Forecast Suite</h1><p>Existing Plotly forecasting outputs integrated without rewriting their graph definitions.</p></div><span className="chip">NODE {node.id}</span></div><div className="graph-grid">{FORECAST_GRAPHS.map(([title,src])=><article className="graph-card" key={src}><div className="graph-title">{title}</div><iframe title={`${title} forecast`} src={src}/></article>)}</div></main>}

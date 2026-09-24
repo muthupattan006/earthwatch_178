@@ -1,0 +1,16 @@
+
+[Graph: time_series_graph.html]
+  Auto-detected frequency: 0 days 00:15:00
+  Columns plotted: WIND_TEMP_010_N_01_AVG, WIND_WSS_010_S_01_AVG
+  Total records (with gaps): 52670
+  Date Range: 2017-02-07 08:30:00+05:30 to 2018-08-09 23:45:00+05:30
+  Graph saved at: C:\Users\priya\OneDrive\Documents\Desktop\EarthWatch_Visualization_Analysis\output\time_series_graph.html
+
+[Graph: windrose_48m_50m.png]
+  Direction Column: WIND_WDS_048_N_01_AVG
+  Speed Column: WIND_WSS_050_S_01_AVG
+  Valid Data Points: 44,203
+  Average Wind Speed: 4.88 m/s
+  Maximum Wind Speed: 19.58 m/s
+  Average Wind Direction: 165.7°
+  Image Saved: C:\Users\priya\OneDrive\Documents\Desktop\EarthWatch_Visualization_Analysis\output\windrose_48m_50m.png
